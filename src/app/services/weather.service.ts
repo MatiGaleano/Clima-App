@@ -3,14 +3,14 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
-import { Coord, WeatherData } from '../models/weather.interface';
+import { Coord, WeatherData } from 'src/app/models/weather.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
-  private readonly API_URL = environment.API_URL;
-  private readonly API_KEY = environment.API_KEY;
+  private readonly API_URL: any = environment.API_URL;
+  private readonly API_KEY: any = environment.API_KEY;
 
 
   constructor(
