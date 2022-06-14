@@ -4,10 +4,9 @@
 
 export const environment = {
   production: false,
-  weatherApi: {
-    key: '4c9137b3d41f3a53d713b0593d69d133',
-    url: 'http://api.openweathermap.org/data/2.5/weather'
-  }
+  API_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  API_URL: 'http://api.openweathermap.org/data/2.5/weather'
+  
 };
 
 /*

@@ -9,7 +9,8 @@ import { Coord, WeatherData } from '../models/weather.interface';
   providedIn: 'root'
 })
 export class WeatherService {
-  private readonly Api_Url = environment.weatherApi.url;
+  private readonly API_URL = environment.API_URL;
+  private readonly API_KEY = environment.API_KEY;
 
 
   constructor(
@@ -20,10 +21,10 @@ export class WeatherService {
     const params = new HttpParams()
     .set('q', city)
     .set('units', 'metric')
-    .set('appid', environment.weatherApi.key)
+    .set('appid', this.API_KEY)
     .set('lang', 'es');
     
-    return this.http.get<WeatherData>(`${this.Api_Url}`, { params });
+    return this.http.get<WeatherData>(`${this.API_URL}`, { params });
   }
 
   getWeatherbyCoord(coord:Coord ): Observable<WeatherData>{
@@ -31,9 +32,9 @@ export class WeatherService {
     .set('lat', coord.lat)
     .set('lon', coord.lon)
     .set('units', 'metric')
-    .set('appid', environment.weatherApi.key)
+    .set('appid', this.API_KEY)
     .set('lang', 'es');
 
-    return this.http.get<WeatherData>(`${this.Api_Url}`, { params });
+    return this.http.get<WeatherData>(`${this.API_URL}`, { params });
   }
 }
